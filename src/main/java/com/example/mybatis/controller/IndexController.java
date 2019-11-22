@@ -170,8 +170,9 @@ public class IndexController {
     public Object test3(){
         // selectAll()
 //        TImageExample.Criteria criteria = tImageExample.createCriteria();
-        PageHelper.startPage(0,10);
+        PageHelper.startPage(1,10);
         TImageExample tImageExample = new TImageExample();
         return new PageInfo(tImageMapper.selectByExample(tImageExample));
     }
+
 }

@@ -73,7 +73,7 @@
   </sql>
   <sql id="Base_Column_List">
     image_id, title, small_image, path, create_user, create_time, update_user, update_time, 
-    is_delete
+    is_delete, is_enable
   </sql>
   <select id="selectByExample" parameterType="com.example.mybatis.entity.TImageExample" resultMap="BaseResultMap">
     select
