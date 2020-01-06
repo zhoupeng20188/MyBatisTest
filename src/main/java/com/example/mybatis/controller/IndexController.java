@@ -174,5 +174,15 @@ public class IndexController {
         TImageExample tImageExample = new TImageExample();
         return new PageInfo(tImageMapper.selectByExample(tImageExample));
     }
-
+    @RequestMapping("/insertOne")
+    public Object insertOne(){
+        TImage tImage = new TImage();
+        tImage.setTitle("t1_test"+System.currentTimeMillis());
+        tImage.setPath("p1_test" + System.currentTimeMillis());
+        tImage.setSmallImage("s1_test" + System.currentTimeMillis());
+        tImage.setIsDelete("0");
+        tImage.setIsEnable("1");
+        tImage.setCreateTime(new Date());
+        return tImageMapper.insert(tImage);
+    }
 }
