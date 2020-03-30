@@ -9,6 +9,13 @@ public class TBook {
 
     private String author;
 
+    public TBook(Integer bookId, Integer imageId, String title, String author) {
+        this.bookId = bookId;
+        this.imageId = imageId;
+        this.title = title;
+        this.author = author;
+    }
+
     public TBook() {
         super();
     }

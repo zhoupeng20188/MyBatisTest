@@ -7,6 +7,16 @@ public class TComment {
 
     private String content;
 
+    public TComment(Integer commentId, Integer bookId, String content) {
+        this.commentId = commentId;
+        this.bookId = bookId;
+        this.content = content;
+    }
+
+    public TComment() {
+        super();
+    }
+
     public Integer getCommentId() {
         return commentId;
     }
