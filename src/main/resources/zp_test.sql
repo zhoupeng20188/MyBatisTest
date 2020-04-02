@@ -59,20 +59,42 @@ CREATE TABLE `t_goods` (
 LOCK TABLES `t_goods` WRITE;
 /*!40000 ALTER TABLE `t_goods` DISABLE KEYS */;
 
-INSERT INTO `t_goods` (`id`, `type`, `small_image`, `path`, `title`, `desc`, `price`, `num`, `detail`)
-VALUES
-	(1,0,'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg',NULL,'2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女',NULL,66.26,11,NULL),
-	(2,1,'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp',NULL,'春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套',NULL,89.00,12,NULL),
-	(3,2,'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp',NULL,'卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣',NULL,308.00,13,NULL),
-	(4,0,'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg',NULL,'2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女',NULL,88.88,11,NULL),
-	(5,0,'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg',NULL,'2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女',NULL,99.99,11,NULL),
-	(6,0,'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg',NULL,'2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女',NULL,100.00,11,NULL),
-	(7,1,'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp',NULL,'春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套',NULL,99.00,12,NULL),
-	(8,1,'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp',NULL,'春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套',NULL,199.00,12,NULL),
-	(9,1,'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp',NULL,'春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套',NULL,229.00,12,NULL),
-	(10,2,'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp',NULL,'卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣',NULL,198.00,13,NULL),
-	(11,2,'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp',NULL,'卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣',NULL,233.00,13,NULL),
-	(12,2,'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp',NULL,'卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣',NULL,355.00,13,NULL);
+-- ----------------------------
+-- Records of t_goods
+-- ----------------------------
+INSERT INTO `t_goods` VALUES (1, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 66.26, 11, NULL);
+INSERT INTO `t_goods` VALUES (2, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 89.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (3, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 308.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (4, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 88.88, 11, NULL);
+INSERT INTO `t_goods` VALUES (5, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 99.99, 11, NULL);
+INSERT INTO `t_goods` VALUES (6, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 100.00, 11, NULL);
+INSERT INTO `t_goods` VALUES (7, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 99.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (8, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 199.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (9, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (10, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 198.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (11, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 233.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (12, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (13, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 100.00, 11, NULL);
+INSERT INTO `t_goods` VALUES (14, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 100.00, 11, NULL);
+INSERT INTO `t_goods` VALUES (15, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 100.00, 11, NULL);
+INSERT INTO `t_goods` VALUES (16, 0, 'https://img.alicdn.com/imgextra/i3/43388146/O1CN01vHoUcH2A2ur0yDxzX_!!2-saturn_solar.png_240x240.jpg', NULL, '2020夏新款宽松直筒裙子小个子显瘦小黑裙很仙的法国小众连衣裙女', NULL, 100.00, 11, NULL);
+INSERT INTO `t_goods` VALUES (17, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (18, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (19, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (20, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (21, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (22, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (23, 1, 'https://g-search1.alicdn.com/img/bao/uploaded/i4/imgextra/i4/32764303/O1CN017lEfLY1heopTTtCKj_!!0-saturn_solar.jpg_460x460Q90.jpg_.webp', NULL, '春季卫衣女2020年新款潮ins宽松韩版连帽中长款时尚春秋薄款外套', NULL, 229.00, 12, NULL);
+INSERT INTO `t_goods` VALUES (24, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (25, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (26, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (27, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (28, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (29, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (30, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (31, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (32, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
+INSERT INTO `t_goods` VALUES (33, 2, 'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/1766047907/O1CN01C1cpa828HSHID3ojw_!!0-item_pic.jpg_460x460Q90.jpg_.webp', NULL, '卫衣2020年春装新款中长款假两件拼接外套慵懒风女装网红超仙上衣', NULL, 355.00, 13, NULL);
 
 /*!40000 ALTER TABLE `t_goods` ENABLE KEYS */;
 UNLOCK TABLES;
