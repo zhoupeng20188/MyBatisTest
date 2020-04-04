@@ -50,7 +50,7 @@ public class HomeController {
 
         TGoodsExample tGoodsExample = new TGoodsExample();
         TGoodsExample.Criteria criteria = tGoodsExample.createCriteria();
-        criteria.andTypeEqualTo(type);
+        criteria.andGoodtypeEqualTo(type);
 
         Object o = new PageInfo<>(tGoodsMapper.selectByExample(tGoodsExample));
         long costTime = System.currentTimeMillis() - start;

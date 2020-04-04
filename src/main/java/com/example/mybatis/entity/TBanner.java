@@ -11,18 +11,21 @@ public class TBanner {
 
     private String link;
 
-    private String desc;
+    private String description;
 
     private Integer sort;
 
-    public TBanner(Integer id, String smallImage, String path, String title, String link, String desc, Integer sort) {
+    private Boolean bannertype;
+
+    public TBanner(Integer id, String smallImage, String path, String title, String link, String description, Integer sort, Boolean bannertype) {
         this.id = id;
         this.smallImage = smallImage;
         this.path = path;
         this.title = title;
         this.link = link;
-        this.desc = desc;
+        this.description = description;
         this.sort = sort;
+        this.bannertype = bannertype;
     }
 
     public TBanner() {
@@ -69,12 +72,12 @@ public class TBanner {
         this.link = link == null ? null : link.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     public Integer getSort() {
@@ -83,5 +86,13 @@ public class TBanner {
 
     public void setSort(Integer sort) {
         this.sort = sort;
+    }
+
+    public Boolean getBannertype() {
+        return bannertype;
+    }
+
+    public void setBannertype(Boolean bannertype) {
+        this.bannertype = bannertype;
     }
 }

@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class TGoods {
     private Integer id;
 
-    private Integer type;
+    private Integer goodtype;
 
     private String smallImage;
 
@@ -13,7 +13,7 @@ public class TGoods {
 
     private String title;
 
-    private String desc;
+    private String description;
 
     private BigDecimal price;
 
@@ -21,13 +21,13 @@ public class TGoods {
 
     private String detail;
 
-    public TGoods(Integer id, Integer type, String smallImage, String path, String title, String desc, BigDecimal price, Integer num, String detail) {
+    public TGoods(Integer id, Integer goodtype, String smallImage, String path, String title, String description, BigDecimal price, Integer num, String detail) {
         this.id = id;
-        this.type = type;
+        this.goodtype = goodtype;
         this.smallImage = smallImage;
         this.path = path;
         this.title = title;
-        this.desc = desc;
+        this.description = description;
         this.price = price;
         this.num = num;
         this.detail = detail;
@@ -45,12 +45,12 @@ public class TGoods {
         this.id = id;
     }
 
-    public Integer getType() {
-        return type;
+    public Integer getGoodtype() {
+        return goodtype;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setGoodtype(Integer goodtype) {
+        this.goodtype = goodtype;
     }
 
     public String getSmallImage() {
@@ -77,12 +77,12 @@ public class TGoods {
         this.title = title == null ? null : title.trim();
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc == null ? null : desc.trim();
+    public void setDescription(String description) {
+        this.description = description == null ? null : description.trim();
     }
 
     public BigDecimal getPrice() {
