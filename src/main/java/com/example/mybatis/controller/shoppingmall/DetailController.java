@@ -1,18 +1,18 @@
 package com.example.mybatis.controller.shoppingmall;
 
 import com.example.mybatis.dto.GoodsDetail;
-import com.example.mybatis.entity.TBanner;
-import com.example.mybatis.entity.TGoods;
-import com.example.mybatis.entity.TGoodsImgExample;
-import com.example.mybatis.entity.TImage;
+import com.example.mybatis.entity.*;
 import com.example.mybatis.mapper.TGoodsBannerMapper;
 import com.example.mybatis.mapper.TGoodsImgMapper;
 import com.example.mybatis.mapper.TGoodsMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -44,5 +44,23 @@ public class DetailController {
         long costTime = System.currentTimeMillis() - start;
         System.out.println("用时:" + costTime + "ms");
         return goodsDetail;
+    }
+
+    @RequestMapping("/getRecommandGoods")
+    public Object getRecommandGoods(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        long start = System.currentTimeMillis();
+
+        TGoodsExample tGoodsExample = new TGoodsExample();
+        TGoodsExample.Criteria criteria = tGoodsExample.createCriteria();
+        ArrayList<Integer> integers = new ArrayList<>();
+        integers.add(1);
+        integers.add(4);
+        criteria.andIdIn(integers);
+
+        Object o = new PageInfo<>(tGoodsMapper.selectByExample(tGoodsExample));
+        long costTime = System.currentTimeMillis() - start;
+        System.out.println("用时:" + costTime + "ms");
+        return o;
     }
 }
