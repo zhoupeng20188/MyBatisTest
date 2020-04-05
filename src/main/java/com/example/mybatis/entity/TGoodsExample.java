@@ -165,63 +165,73 @@ public class TGoodsExample {
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeIsNull() {
-            addCriterion("goodType is null");
+        public Criteria andGoodTypeIsNull() {
+            addCriterion("good_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeIsNotNull() {
-            addCriterion("goodType is not null");
+        public Criteria andGoodTypeIsNotNull() {
+            addCriterion("good_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeEqualTo(Integer value) {
-            addCriterion("goodType =", value, "goodtype");
+        public Criteria andGoodTypeEqualTo(String value) {
+            addCriterion("good_type =", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeNotEqualTo(Integer value) {
-            addCriterion("goodType <>", value, "goodtype");
+        public Criteria andGoodTypeNotEqualTo(String value) {
+            addCriterion("good_type <>", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeGreaterThan(Integer value) {
-            addCriterion("goodType >", value, "goodtype");
+        public Criteria andGoodTypeGreaterThan(String value) {
+            addCriterion("good_type >", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("goodType >=", value, "goodtype");
+        public Criteria andGoodTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("good_type >=", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeLessThan(Integer value) {
-            addCriterion("goodType <", value, "goodtype");
+        public Criteria andGoodTypeLessThan(String value) {
+            addCriterion("good_type <", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeLessThanOrEqualTo(Integer value) {
-            addCriterion("goodType <=", value, "goodtype");
+        public Criteria andGoodTypeLessThanOrEqualTo(String value) {
+            addCriterion("good_type <=", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeIn(List<Integer> values) {
-            addCriterion("goodType in", values, "goodtype");
+        public Criteria andGoodTypeLike(String value) {
+            addCriterion("good_type like", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeNotIn(List<Integer> values) {
-            addCriterion("goodType not in", values, "goodtype");
+        public Criteria andGoodTypeNotLike(String value) {
+            addCriterion("good_type not like", value, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeBetween(Integer value1, Integer value2) {
-            addCriterion("goodType between", value1, value2, "goodtype");
+        public Criteria andGoodTypeIn(List<String> values) {
+            addCriterion("good_type in", values, "goodType");
             return (Criteria) this;
         }
 
-        public Criteria andGoodtypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("goodType not between", value1, value2, "goodtype");
+        public Criteria andGoodTypeNotIn(List<String> values) {
+            addCriterion("good_type not in", values, "goodType");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodTypeBetween(String value1, String value2) {
+            addCriterion("good_type between", value1, value2, "goodType");
+            return (Criteria) this;
+        }
+
+        public Criteria andGoodTypeNotBetween(String value1, String value2) {
+            addCriterion("good_type not between", value1, value2, "goodType");
             return (Criteria) this;
         }
 

@@ -3,6 +3,7 @@ package com.example.mybatis.mapper;
 import com.example.mybatis.entity.TBanner;
 import com.example.mybatis.entity.TGoodsBanner;
 import com.example.mybatis.entity.TGoodsBannerExample;
+import com.example.mybatis.entity.TImage;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;

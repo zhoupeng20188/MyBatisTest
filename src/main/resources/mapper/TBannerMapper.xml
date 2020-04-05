@@ -10,7 +10,7 @@
       <arg column="link" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="sort" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="bannerType" javaType="java.lang.Boolean" jdbcType="BIT" />
+      <arg column="banner_type" javaType="java.lang.String" jdbcType="CHAR" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -43,7 +43,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, small_image, path, title, link, description, sort, bannerType
+    id, small_image, path, title, link, description, sort, banner_type
   </sql>
   <select id="selectByExample" parameterType="com.example.mybatis.entity.TBannerExample" resultMap="BaseResultMap">
     select
@@ -79,10 +79,10 @@
   <insert id="insert" parameterType="com.example.mybatis.entity.TBanner">
     insert into t_banner (id, small_image, path, 
       title, link, description, 
-      sort, bannerType)
+      sort, banner_type)
     values (#{id,jdbcType=INTEGER}, #{smallImage,jdbcType=VARCHAR}, #{path,jdbcType=VARCHAR}, 
       #{title,jdbcType=VARCHAR}, #{link,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{sort,jdbcType=INTEGER}, #{bannertype,jdbcType=BIT})
+      #{sort,jdbcType=INTEGER}, #{bannerType,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.example.mybatis.entity.TBanner">
     insert into t_banner
@@ -108,8 +108,8 @@
       <if test="sort != null">
         sort,
       </if>
-      <if test="bannertype != null">
-        bannerType,
+      <if test="bannerType != null">
+        banner_type,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -134,8 +134,8 @@
       <if test="sort != null">
         #{sort,jdbcType=INTEGER},
       </if>
-      <if test="bannertype != null">
-        #{bannertype,jdbcType=BIT},
+      <if test="bannerType != null">
+        #{bannerType,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -166,8 +166,8 @@
       <if test="sort != null">
         sort = #{sort,jdbcType=INTEGER},
       </if>
-      <if test="bannertype != null">
-        bannerType = #{bannertype,jdbcType=BIT},
+      <if test="bannerType != null">
+        banner_type = #{bannerType,jdbcType=CHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -180,7 +180,7 @@
       link = #{link,jdbcType=VARCHAR},
       description = #{description,jdbcType=VARCHAR},
       sort = #{sort,jdbcType=INTEGER},
-      bannerType = #{bannertype,jdbcType=BIT}
+      banner_type = #{bannerType,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

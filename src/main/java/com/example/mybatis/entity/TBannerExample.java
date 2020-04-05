@@ -574,63 +574,73 @@ public class TBannerExample {
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeIsNull() {
-            addCriterion("bannerType is null");
+        public Criteria andBannerTypeIsNull() {
+            addCriterion("banner_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeIsNotNull() {
-            addCriterion("bannerType is not null");
+        public Criteria andBannerTypeIsNotNull() {
+            addCriterion("banner_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeEqualTo(Boolean value) {
-            addCriterion("bannerType =", value, "bannertype");
+        public Criteria andBannerTypeEqualTo(String value) {
+            addCriterion("banner_type =", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeNotEqualTo(Boolean value) {
-            addCriterion("bannerType <>", value, "bannertype");
+        public Criteria andBannerTypeNotEqualTo(String value) {
+            addCriterion("banner_type <>", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeGreaterThan(Boolean value) {
-            addCriterion("bannerType >", value, "bannertype");
+        public Criteria andBannerTypeGreaterThan(String value) {
+            addCriterion("banner_type >", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeGreaterThanOrEqualTo(Boolean value) {
-            addCriterion("bannerType >=", value, "bannertype");
+        public Criteria andBannerTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("banner_type >=", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeLessThan(Boolean value) {
-            addCriterion("bannerType <", value, "bannertype");
+        public Criteria andBannerTypeLessThan(String value) {
+            addCriterion("banner_type <", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeLessThanOrEqualTo(Boolean value) {
-            addCriterion("bannerType <=", value, "bannertype");
+        public Criteria andBannerTypeLessThanOrEqualTo(String value) {
+            addCriterion("banner_type <=", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeIn(List<Boolean> values) {
-            addCriterion("bannerType in", values, "bannertype");
+        public Criteria andBannerTypeLike(String value) {
+            addCriterion("banner_type like", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeNotIn(List<Boolean> values) {
-            addCriterion("bannerType not in", values, "bannertype");
+        public Criteria andBannerTypeNotLike(String value) {
+            addCriterion("banner_type not like", value, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeBetween(Boolean value1, Boolean value2) {
-            addCriterion("bannerType between", value1, value2, "bannertype");
+        public Criteria andBannerTypeIn(List<String> values) {
+            addCriterion("banner_type in", values, "bannerType");
             return (Criteria) this;
         }
 
-        public Criteria andBannertypeNotBetween(Boolean value1, Boolean value2) {
-            addCriterion("bannerType not between", value1, value2, "bannertype");
+        public Criteria andBannerTypeNotIn(List<String> values) {
+            addCriterion("banner_type not in", values, "bannerType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBannerTypeBetween(String value1, String value2) {
+            addCriterion("banner_type between", value1, value2, "bannerType");
+            return (Criteria) this;
+        }
+
+        public Criteria andBannerTypeNotBetween(String value1, String value2) {
+            addCriterion("banner_type not between", value1, value2, "bannerType");
             return (Criteria) this;
         }
     }

@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.example.mybatis.entity.TGoods">
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
-      <arg column="goodType" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="good_type" javaType="java.lang.String" jdbcType="CHAR" />
       <arg column="small_image" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="path" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -44,7 +44,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, goodType, small_image, path, title, description, price, num, detail
+    id, good_type, small_image, path, title, description, price, num, detail
   </sql>
   <select id="selectByExample" parameterType="com.example.mybatis.entity.TGoodsExample" resultMap="BaseResultMap">
     select
@@ -78,10 +78,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.example.mybatis.entity.TGoods">
-    insert into t_goods (id, goodType, small_image, 
+    insert into t_goods (id, good_type, small_image, 
       path, title, description, 
       price, num, detail)
-    values (#{id,jdbcType=INTEGER}, #{goodtype,jdbcType=INTEGER}, #{smallImage,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=INTEGER}, #{goodType,jdbcType=CHAR}, #{smallImage,jdbcType=VARCHAR}, 
       #{path,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
       #{price,jdbcType=DECIMAL}, #{num,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR})
   </insert>
@@ -91,8 +91,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="goodtype != null">
-        goodType,
+      <if test="goodType != null">
+        good_type,
       </if>
       <if test="smallImage != null">
         small_image,
@@ -120,8 +120,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="goodtype != null">
-        #{goodtype,jdbcType=INTEGER},
+      <if test="goodType != null">
+        #{goodType,jdbcType=CHAR},
       </if>
       <if test="smallImage != null">
         #{smallImage,jdbcType=VARCHAR},
@@ -155,8 +155,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.example.mybatis.entity.TGoods">
     update t_goods
     <set>
-      <if test="goodtype != null">
-        goodType = #{goodtype,jdbcType=INTEGER},
+      <if test="goodType != null">
+        good_type = #{goodType,jdbcType=CHAR},
       </if>
       <if test="smallImage != null">
         small_image = #{smallImage,jdbcType=VARCHAR},
@@ -184,7 +184,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.mybatis.entity.TGoods">
     update t_goods
-    set goodType = #{goodtype,jdbcType=INTEGER},
+    set good_type = #{goodType,jdbcType=CHAR},
       small_image = #{smallImage,jdbcType=VARCHAR},
       path = #{path,jdbcType=VARCHAR},
       title = #{title,jdbcType=VARCHAR},

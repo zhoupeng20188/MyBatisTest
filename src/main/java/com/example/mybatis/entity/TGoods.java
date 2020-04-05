@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class TGoods {
     private Integer id;
 
-    private Integer goodtype;
+    private String goodType;
 
     private String smallImage;
 
@@ -21,9 +21,9 @@ public class TGoods {
 
     private String detail;
 
-    public TGoods(Integer id, Integer goodtype, String smallImage, String path, String title, String description, BigDecimal price, Integer num, String detail) {
+    public TGoods(Integer id, String goodType, String smallImage, String path, String title, String description, BigDecimal price, Integer num, String detail) {
         this.id = id;
-        this.goodtype = goodtype;
+        this.goodType = goodType;
         this.smallImage = smallImage;
         this.path = path;
         this.title = title;
@@ -45,12 +45,12 @@ public class TGoods {
         this.id = id;
     }
 
-    public Integer getGoodtype() {
-        return goodtype;
+    public String getGoodType() {
+        return goodType;
     }
 
-    public void setGoodtype(Integer goodtype) {
-        this.goodtype = goodtype;
+    public void setGoodType(String goodType) {
+        this.goodType = goodType == null ? null : goodType.trim();
     }
 
     public String getSmallImage() {
