@@ -2,6 +2,7 @@ package com.example.mybatis.controller.shoppingmall;
 
 import com.example.mybatis.dto.GoodsDetail;
 import com.example.mybatis.entity.*;
+import com.example.mybatis.mapper.MCommentMapper;
 import com.example.mybatis.mapper.TGoodsBannerMapper;
 import com.example.mybatis.mapper.TGoodsImgMapper;
 import com.example.mybatis.mapper.TGoodsMapper;
@@ -26,6 +27,9 @@ public class DetailController {
 
     @Autowired
     TGoodsImgMapper tGoodsImgMapper;
+
+    @Autowired
+    MCommentMapper mCommentMapper;
 
     @RequestMapping("/detail")
     public Object detail(Integer id) {
@@ -59,6 +63,17 @@ public class DetailController {
         criteria.andIdIn(integers);
 
         Object o = new PageInfo<>(tGoodsMapper.selectByExample(tGoodsExample));
+        long costTime = System.currentTimeMillis() - start;
+        System.out.println("用时:" + costTime + "ms");
+        return o;
+    }
+
+    @RequestMapping("/comment")
+    public Object comment(Integer pageNum, Integer pageSize, Integer id) {
+        PageHelper.startPage(pageNum, pageSize);
+        long start = System.currentTimeMillis();
+
+        Object o = new PageInfo<>(mCommentMapper.selectComment(id));
         long costTime = System.currentTimeMillis() - start;
         System.out.println("用时:" + costTime + "ms");
         return o;
