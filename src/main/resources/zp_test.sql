@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.25)
 # Database: zp_test
-# Generation Time: 2020-04-05 06:35:53 +0000
+# Generation Time: 2020-04-11 08:46:06 +0000
 # ************************************************************
 
 
@@ -18,6 +18,32 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table m_comment
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `m_comment`;
+
+CREATE TABLE `m_comment` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `goods_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `comment` varchar(255) DEFAULT NULL,
+  `comment_time` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `m_comment` WRITE;
+/*!40000 ALTER TABLE `m_comment` DISABLE KEYS */;
+
+INSERT INTO `m_comment` (`id`, `goods_id`, `user_id`, `comment`, `comment_time`)
+VALUES
+	(1,1,1,'这件衣服质量很好！这件衣服质量很好！这件衣服质量很好！这件衣服质量很好！这件衣服质量很好！这件衣服质量很好！这件衣服质量很好！','2020-04-05'),
+	(2,1,1,'第二次购买了！~~~第二次购买了！~~~第二次购买了！~~~第二次购买了！~~~第二次购买了！~~~','2020-04-05');
+
+/*!40000 ALTER TABLE `m_comment` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table t_banner
@@ -235,6 +261,31 @@ VALUES
 	(8,'第8个标题','https://img.alicdn.com/imgextra/i4/1035301420/O1CN01jXT9Cm1MMOuSi6XwT_!!1035301420.jpg','test.jpg',NULL,'2020-03-16 21:34:53',NULL,NULL,'0','1');
 
 /*!40000 ALTER TABLE `t_image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table t_user
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `t_user`;
+
+CREATE TABLE `t_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `sex` int(11) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `t_user` WRITE;
+/*!40000 ALTER TABLE `t_user` DISABLE KEYS */;
+
+INSERT INTO `t_user` (`id`, `name`, `sex`, `address`, `phone`)
+VALUES
+	(1,'嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟嘟',NULL,NULL,NULL);
+
+/*!40000 ALTER TABLE `t_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
 
