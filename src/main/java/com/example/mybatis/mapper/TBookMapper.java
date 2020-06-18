@@ -4,6 +4,7 @@ import com.example.mybatis.dto.TBookDto2;
 import com.example.mybatis.dto.TBookDto3;
 import com.example.mybatis.entity.TBook;
 import com.example.mybatis.entity.TBookExample;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -29,4 +30,7 @@ public interface TBookMapper {
     int updateByPrimaryKey(TBook record);
 
     List<TBookDto3> selectByExampleWithComment(TBookExample tBookExample);
+
+    @Update("update t_book set author = 'a4' where author = #{author}")
+    void updateByAuthor(String author);
 }
