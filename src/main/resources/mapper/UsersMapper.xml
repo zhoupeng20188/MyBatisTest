@@ -100,7 +100,8 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.mybatis.entity.Users">
+  <insert id="insert" parameterType="com.example.mybatis.entity.Users"
+          useGeneratedKeys="true" keyProperty="id">
     insert into users (id, name, age, 
       area, phone)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
