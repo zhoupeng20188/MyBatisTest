@@ -10,22 +10,37 @@ Target Server Type    : MYSQL
 Target Server Version : 50723
 File Encoding         : 65001
 
-Date: 2019-11-22 16:29:04
+Date: 2020-09-16 18:29:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for student
+-- ----------------------------
+DROP TABLE IF EXISTS `student`;
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `class_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `subject` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `time` datetime DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `stu` (`class_name`,`name`,`subject`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for t_book
 -- ----------------------------
 DROP TABLE IF EXISTS `t_book`;
 CREATE TABLE `t_book` (
-  `book_id` int(11) NOT NULL,
+  `book_id` int(11) NOT NULL AUTO_INCREMENT,
   `image_id` int(11) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `author` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for t_comment
@@ -55,4 +70,30 @@ CREATE TABLE `t_image` (
   `is_enable` char(1) NOT NULL DEFAULT '1' COMMENT '@desc 是否启用 @values 0：否|1：是',
   PRIMARY KEY (`image_id`),
   KEY `title_id` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=2472251 DEFAULT CHARSET=utf8 COMMENT='图片表';
+) ENGINE=InnoDB AUTO_INCREMENT=2472252 DEFAULT CHARSET=utf8 COMMENT='图片表';
+
+-- ----------------------------
+-- Table structure for users
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for user_extra_info
+-- ----------------------------
+DROP TABLE IF EXISTS `user_extra_info`;
+CREATE TABLE `user_extra_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `hobby` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `last_login_time` datetime DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
