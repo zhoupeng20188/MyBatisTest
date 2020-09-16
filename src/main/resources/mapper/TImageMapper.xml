@@ -2,49 +2,22 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mybatis.mapper.TImageMapper">
   <resultMap id="BaseResultMap" type="com.example.mybatis.entity.TImage">
-    <id column="image_id" jdbcType="INTEGER" property="imageId" />
-    <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="small_image" jdbcType="VARCHAR" property="smallImage" />
-    <result column="path" jdbcType="VARCHAR" property="path" />
-    <result column="create_user" jdbcType="INTEGER" property="createUser" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="is_delete" jdbcType="CHAR" property="isDelete" />
-    <result column="is_enable" jdbcType="CHAR" property="isEnable" />
+    <constructor>
+      <idArg column="image_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="small_image" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="path" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="create_user" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_user" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="is_delete" javaType="java.lang.String" jdbcType="CHAR" />
+      <arg column="is_enable" javaType="java.lang.String" jdbcType="CHAR" />
+    </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
         <if test="criteria.valid">
           <trim prefix="(" prefixOverrides="and" suffix=")">
             <foreach collection="criteria.criteria" item="criterion">
@@ -106,8 +79,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.mybatis.entity.TImage"
-          useGeneratedKeys="true" keyProperty="imageId">
+  <insert id="insert" parameterType="com.example.mybatis.entity.TImage">
     insert into t_image (image_id, title, small_image, 
       path, create_user, create_time, 
       update_user, update_time, is_delete, 
@@ -190,60 +162,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update t_image
-    <set>
-      <if test="record.imageId != null">
-        image_id = #{record.imageId,jdbcType=INTEGER},
-      </if>
-      <if test="record.title != null">
-        title = #{record.title,jdbcType=VARCHAR},
-      </if>
-      <if test="record.smallImage != null">
-        small_image = #{record.smallImage,jdbcType=VARCHAR},
-      </if>
-      <if test="record.path != null">
-        path = #{record.path,jdbcType=VARCHAR},
-      </if>
-      <if test="record.createUser != null">
-        create_user = #{record.createUser,jdbcType=INTEGER},
-      </if>
-      <if test="record.createTime != null">
-        create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.updateUser != null">
-        update_user = #{record.updateUser,jdbcType=INTEGER},
-      </if>
-      <if test="record.updateTime != null">
-        update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.isDelete != null">
-        is_delete = #{record.isDelete,jdbcType=CHAR},
-      </if>
-      <if test="record.isEnable != null">
-        is_enable = #{record.isEnable,jdbcType=CHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update t_image
-    set image_id = #{record.imageId,jdbcType=INTEGER},
-      title = #{record.title,jdbcType=VARCHAR},
-      small_image = #{record.smallImage,jdbcType=VARCHAR},
-      path = #{record.path,jdbcType=VARCHAR},
-      create_user = #{record.createUser,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_user = #{record.updateUser,jdbcType=INTEGER},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      is_delete = #{record.isDelete,jdbcType=CHAR},
-      is_enable = #{record.isEnable,jdbcType=CHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
   <update id="updateByPrimaryKeySelective" parameterType="com.example.mybatis.entity.TImage">
     update t_image
     <set>

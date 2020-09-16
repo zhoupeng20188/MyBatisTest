@@ -2,38 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.mybatis.mapper.TBookMapper">
   <resultMap id="BaseResultMap" type="com.example.mybatis.entity.TBook">
-    <id column="book_id" jdbcType="INTEGER" property="bookId" />
-    <result column="image_id" jdbcType="INTEGER" property="imageId" />
-    <result column="title" jdbcType="VARCHAR" property="title" />
-    <result column="author" jdbcType="VARCHAR" property="author" />
-  </resultMap>
-  <!-- 连接查询需要一个对象时需要用resultMap 用association -->
-  <!--<resultMap id="selectByExampleWithImageResultMap" type="com.example.mybatis.dto.TBookDto">-->
-    <!--<result column="book_id" property="bookId"  jdbcType="INTEGER" />-->
-    <!--<result column="image_id" property="imageId"  jdbcType="INTEGER" />-->
-    <!--<result column="title" property="title"  jdbcType="VARCHAR" />-->
-    <!--<result column="author" property="author" jdbcType="VARCHAR" />-->
-    <!--&lt;!&ndash; association ：配置一对一属性 &ndash;&gt;-->
-    <!--&lt;!&ndash; property:实体类中里面的 TCollege 属性名 &ndash;&gt;-->
-    <!--&lt;!&ndash; javaType:属性类型 &ndash;&gt;-->
-    <!--<association property="image" javaType="com.example.mybatis.entity.TImage" >-->
-      <!--&lt;!&ndash; id:声明主键，表示 college_id 是关联查询对象的唯一标识&ndash;&gt;-->
-      <!--<id property="imageId" column="image_id" />-->
-      <!--<result property="smallImage" column="small_image" />-->
-    <!--</association>-->
-  <!--</resultMap>-->
-  <resultMap id="selectByExampleWithCommentResultMap" type="com.example.mybatis.dto.TBookDto3">
-    <!-- 先配置Book的属性 -->
-    <result column="book_id" property="bookId"  jdbcType="INTEGER" />
-    <result column="image_id" property="imageId"  jdbcType="INTEGER" />
-    <result column="title" property="title"  jdbcType="VARCHAR" />
-    <result column="author" property="author" jdbcType="VARCHAR" />
-    <!-- 再配置 Comment 集合 -->
-    <collection property="comment" ofType="com.example.mybatis.entity.TComment">
-      <id column="comment_id" jdbcType="INTEGER" property="commentId" />
-      <result column="book_id" jdbcType="INTEGER" property="bookId" />
-      <result column="content" jdbcType="VARCHAR" property="content" />
-    </collection>
+    <constructor>
+      <idArg column="book_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="image_id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="title" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="author" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -64,69 +38,9 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Example_Where_Clause_With_Comment">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-      and A.book_id = B.book_id
-    </where>
-  </sql>
   <sql id="Base_Column_List">
     book_id, image_id, title, author
   </sql>
-  <!--<select id="selectByExampleWithImage" parameterType="com.example.mybatis.entity.TBookExample"-->
-          <!--resultMap="selectByExampleWithImageResultMap">-->
-  <!-- 指定resultType驼峰命令才会生效，不指定resultType则需要指定resultMap -->
-  <select id="selectByExampleWithImage" parameterType="com.example.mybatis.entity.TBookExample"
-           resultType="com.example.mybatis.dto.TBookDto2">
-    select
-    A.*,
-    B.small_image
-    from t_book A
-    left join t_image B
-    on A.image_id = B.image_id
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByExampleWithComment" parameterType="com.example.mybatis.entity.TBookExample"
-  resultMap="selectByExampleWithCommentResultMap">
-    select
-    *
-    from t_book A,t_comment B
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause_With_Comment" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" parameterType="com.example.mybatis.entity.TBookExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -201,7 +115,6 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-
   <update id="updateByPrimaryKeySelective" parameterType="com.example.mybatis.entity.TBook">
     update t_book
     <set>
