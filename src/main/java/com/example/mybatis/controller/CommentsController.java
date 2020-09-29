@@ -24,7 +24,7 @@ public class CommentsController {
     CommentsMapper commentsMapper;
     private int[] productIds = {1,2,3};
     private int[] isGoodComments = {0,1};
-    @RequestMapping("/product/insert")
+    @RequestMapping("/comments/insert")
     public String insert(){
         int cnt =100 * 10000;
         int iii=0;
@@ -33,7 +33,7 @@ public class CommentsController {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         int productIdSize = productIds.length;
         int isGoodCommentSize = isGoodComments.length;
-        for (int i = 100*10000; i < cnt; i++) {
+        for (int i = 0; i < cnt; i++) {
             iii = i + 1;
             int finalIii = iii;
             executorService.execute(()->{
